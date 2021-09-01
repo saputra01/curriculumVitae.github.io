@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* 
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Oswald', sans-serif;
+*/
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Oswald', sans-serif;
+}
+
+.container {
+   position: relative;
+   min-height: 100vh;
+   display: flex;
+}
+
+.container::before {
+   content: 'echo';
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   font-size: 14vw;
+   z-index: -1;
+   font-weight: 700;
+   opacity: 0.5;
+}
+
+
+/* Section for Menu */
+
+section.sidemenu {
+   width: 20%;
+   min-height: 100vh;
+   box-sizing: border-box;
+   padding: 10px 25px;
+   background-color: rgb(27, 27, 27);
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   overflow-x: hidden;
+}
+
+section.sidemenu .logo {
+   font-weight: 700;
+   text-decoration: none;
+   text-transform: uppercase;
+   color: white;
+   font-size: 2rem;
+   text-shadow: 1px 2px 4px rgb(107, 107, 107);
+   position: relative;
+   top: 30px;
+   left: 30px;
+   right: 30px;
+}
+
+section.sidemenu .logo span {
+   color: red;
+}
+
+
+section.sidemenu ul {
+   margin-top: 45px;
+   list-style: none;
+   text-align: center;
+   position: relative;
+   left: -25px;
+   bottom: -80px;
+}
+
+section.sidemenu ul a {
+   color: orangered;
+   padding: 8px 12px;
+   text-decoration: none;
+   box-sizing: border-box;
+   font-size: 1.2rem;
+}
+
+section.sidemenu ul a:hover,
+section.sidemenu li .active {
+   color: white;
+}
+
+/* end Section for Menu */
+
+
+
+main {
+   width: 80vw;
+   padding: 50px 20px;
+   box-sizing: border-box;
+   font-family: 'Open Sans Condensed', sans-serif;
+   z-index: 1;
+   top: 0;
+   right: 0;
+   margin-left: 20%;
+   overflow-x: hidden;
+}
+
+main::after {
+   content: '';
+   display: block;
+   padding-bottom: 220px;
+
+}
+
+main .btn-toggle {
+   width: 35px;
+   height: 35px;
+   border-radius: 5px;
+   box-shadow: 0 0 5px black;
+   position: relative;
+   top: 0;
+   right: -90%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+
+main .btn-toggle input[type="checkbox"] {
+   position: absolute;
+   width: 35px;
+   height: 35px;
+   padding: 5px;
+   opacity: 0;
+   cursor: pointer;
+   z-index: 2;
+}
+
+main .btn-toggle span {
+   width: 35px;
+   height: 7px;
+   display: block;
+   border-radius: 50px;
+   background-color: black;
+   transition: all 0.5s ease;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -ms-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   -webkit-border-radius: 50px;
+   -moz-border-radius: 50px;
+   -ms-border-radius: 50px;
+   -o-border-radius: 50px;
+}
+
+main .btn-toggle span:nth-child(2) {
+   transform-origin: 0 0;
+}
+
+main .btn-toggle span:nth-child(4) {
+   transform-origin: 0 100%;
+}
+
+main .btn-toggle input:checked ~ span:nth-child(2) {
+   transform: rotate(45deg) translate(5px, -6px);
+   -webkit-transform: rotate(45deg) translate(5px, -6px);
+   -moz-transform: rotate(45deg) translate(5px, -6px);
+   -ms-transform: rotate(45deg) translate(5px, -6px);
+   -o-transform: rotate(45deg) translate(5px, -6px);
+}
+
+main .btn-toggle input:checked ~ span:nth-child(4) {
+   transform: rotate(-45deg) translate(5px, 6px);
+   -webkit-transform: rotate(-45deg) translate(5px, 6px);
+   -moz-transform: rotate(-45deg) translate(5px, 6px);
+   -ms-transform: rotate(-45deg) translate(5px, 6px);
+   -o-transform: rotate(-45deg) translate(5px, 6px);
+}
+
+main .btn-toggle input:checked ~ span:nth-child(3) {
+   transform: scale(0);
+}
+
+
+/* HOME */
+main .home {
+   position: relative;
+   height: 100vh;
+   box-sizing: border-box;
+   background-image: url(../image/IMG_20210826_000749-removebg.png);
+   background-position: 100% -25px;
+   background-repeat: no-repeat;
+   background-size: 50%;
+   border-bottom: 1px solid gray;
+}
+
+
+
+main .home .greating {
+   box-sizing: border-box;
+   height: 60vh;
+   position: absolute;
+   top: 30%;
+}
+
+.home .greating h1 {
+   font-size: 9vw;
+   font-weight: 700;
+   text-transform: uppercase;
+   line-height: 7.5rem;
+   text-shadow: 0 0 5px white;
+}
+
+.home .greating h3{
+   margin-top: 10px;
+   font-size: 2vw;
+   font-weight: 400;
+   text-transform: uppercase;
+   color: gray;
+}
+
+/* about */
+main .about {
+   position: relative;
+   top: 100px;
+   height: 100vh;
+   border-bottom: 1px solid gray;
+}
+
+
+main .about .titleHeading {
+   font-size: 9vw;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+main .about .addresses {
+   margin-top: -25px;
+   font-size: 1.2em;
+   color: rgb(158, 158, 158);
+   text-transform: uppercase;
+   font-weight: 500;
+}
+
+main .addresses + .desc-myself {
+   margin: 35px 0;
+   font-size: 22px;
+   font-weight: 300;
+}
+
+main .about .media-sos {
+   width: 50%;
+   display: flex;
+   justify-content: space-evenly;
+   align-content: center;
+   box-sizing: border-box;
+   position: relative;
+   top: 50px;
+}
+
+main .media-sos li {
+   list-style: none;
+   border-radius: 50%;
+}
+
+main .media-sos li a {
+   display: block;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   text-align: center;
+   line-height: 100px;
+}
+
+main .media-sos li a img {
+   width: 100%;
+}
+
+
+
+/* education */
+main .education {
+   position: relative;
+   top: 100px;
+   width: 100%;
+   height: 100vh;
+   box-sizing: border-box;
+   border-bottom: 1px solid gray;
+}
+
+main .education .edTitle {
+   font-size: 8vw;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+main .education .edHead {
+   display: flex;
+   justify-content: space-between;
+   align-content: center;
+   margin-top: 30px;
+}
+
+main .education .edDesc h2 {
+   font-size: 1.4em;
+   text-transform: uppercase;
+   font-weight: 500;
+}
+
+main .education .edDesc h4 {
+   margin-top: -10px;
+   font-size: 1.2em;
+   color: gray;
+   text-transform: uppercase;
+   font-weight: 400;
+}
+
+main .education .edHead .yearG {
+   color: orangered;
+   font-size: 1.2em;
+}
+
+main .education .edContent {
+   font-size: 20px;
+   color: rgb(182, 182, 182);
+   font-weight: 300;
+}
+
+
+/* skill */
+main .skills {
+   position: relative;
+   top: 100px;
+   width: 100%;
+   height: 100vh;
+   box-sizing: border-box;
+   border-bottom: 1px solid gray;
+}
+
+main .skills .skillTitle {
+   font-size: 8vw;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+main .skills .skillDesc {
+   font-size: 1.4em;
+   color: grey;
+   text-transform: uppercase;
+   font-weight: 500;
+}
+
+main .skills .someSkill {
+   display: flex;
+   margin-top: 20px;
+   height: 150px;
+}
+
+main .skills .someSkill .image {
+   width: 100px;
+   margin-right: 5px;
+}
+
+.someSkill img {
+   width: 100%;
+}
+
+main .skills .workFlow {
+   width: 50%;
+   margin-left: 10px;
+}
+
+main .skills .workFlow h3 {
+   margin-top: -10px;
+   font-size: 1.4em;
+   color: gray;
+   text-transform: uppercase;
+   font-weight: 500;
+   padding-bottom: 10px;
+}
+
+
+/* contact */
+main .contact {
+   position: relative;
+   top: 100px;
+   width: 100%;
+   height: 90vh;
+   box-sizing: border-box;
+}
+
+main .contact .contactTitle {
+   font-size: 9vw;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+main .contact .contactDesc {
+   font-size: 4vw;
+   color: gray;
+   text-transform: uppercase;
+   font-weight: 500;
+   padding-bottom: 10px;
+   line-height: 60px;
+}
+
+main .contact .contactDesc span {
+   color: crimson;
+}
+
+
+
+
+
+
+
+
+/* Media screen */
+
+@media screen and (max-width: 1200px) {
+   /* Responsive HOME */
+   main .home .greating h1 {
+      line-height: 6rem;
+      margin: 50px 0 auto;
+   }
+
+   main .home {
+      background-position: 100% 100px;
+   }
+   /* HOME selesai */
+
+
+   /* Responsive ABOUT */
+   
+   main .about .addresses {
+         margin-top: -5px;
+         font-size: 2.2vw;
+      }
+            
+      main .addresses + .desc-myself {
+         font-size: 20px;
+      }
+         
+      main .about .media-sos {
+         width: 50%;
+         top: 50px;
+         justify-content: space-evenly;
+      }
+            
+      main .media-sos li a {
+         display: block;
+         width: 100px;
+         height: 100px;
+      }
+            
+      main .media-sos li a img {
+         width: 100%;
+      }
+   /* ABOUT selesai */
+}
+
+
+
+@media screen and (max-width: 992px) {
+   /* Responsive HOME */
+   main {
+      overflow-x: hidden;
+   }
+
+   main .home {
+      background-position: 100% 150px;
+   }
+
+   main .home .greating h1 {
+      line-height: 5rem;
+      margin: 100px 0 auto;
+   }
+   /* HOME selesai */
+
+
+   /* Responsive ABOUT */
+   
+      main .about .addresses {
+         margin-top: -5px;
+         font-size: 2.2vw;
+      }
+         
+      main .addresses + .desc-myself {
+         font-size: 18px;
+      }
+      
+      main .about .media-sos {
+         width: 65%;
+         top: 50px;
+         justify-content: space-around;
+      }
+         
+      main .media-sos li a {
+         display: block;
+         width: 90px;
+         height: 90px;
+      }
+         
+      main .media-sos li a img {
+         width: 100%;
+      }
+         /* ABOUT selesai */
+}
+
+
+
+@media screen and (max-width: 760px) {
+   /* SIDEMENU */
+
+   section.sidemenu {
+      width: 20%;
+      padding: 10px 30px;
+   }
+
+   section.sidemenu .logo {
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: white;
+      font-size: 16px;
+      text-shadow: 1px 2px 4px rgb(107, 107, 107);
+      position: relative;
+      top: 30px;
+      left: 0;
+   }
+   /* end SIDEMENU */
+
+   /* Responsive HOME */
+   main .home .greating h1 {
+      line-height: 4rem;
+      margin: 100px 0 auto;
+   }
+
+   main .home {
+      background-position: 100% 180px;
+   }
+   /* HOME selesai */
+
+      /* Responsive ABOUT */
+   
+      main .about .addresses {
+         margin-top: -5px;
+         font-size: 2.2vw;
+      }
+      
+      main .addresses + .desc-myself {
+         font-size: 16px;
+      }
+   
+      main .about .media-sos {
+         width: 60%;
+         justify-content: space-between;
+      }
+      
+      main .media-sos li a {
+         display: block;
+         width: 70px;
+         height: 70px;
+      }
+      
+      main .media-sos li a img {
+         width: 100%;
+      }
+      /* ABOUT selesai */
+
+      /* EDUCATION */
+      main .education .edDesc h2 {
+         font-size: 3vw;
+         text-transform: uppercase;
+         font-weight: 500;
+      }
+      
+      main .education .edDesc h4 {
+         margin-top: -3px;
+         font-size: 3vw;
+         color: gray;
+         text-transform: uppercase;
+         font-weight: 400;
+      }
+
+      main .education .edContent {
+         font-size: 16px;
+         color: rgb(182, 182, 182);
+         font-weight: 300;
+      }
+
+      /* EDUCATION selesai */
+
+      /* CONTACT */
+      main .contact {
+         height: 65vh;
+      }
+
+      main .contact .contactTitle {
+         position: absolute;
+         top: 30%;
+      }
+      
+      main .contact .contactDesc {
+         font-size: 3vw;
+         color: gray;
+         text-transform: uppercase;
+         font-weight: 500;
+         padding-bottom: 10px;
+         line-height: 22px;
+         position: relative;
+         top: 50%;
+      }
+      
+      main .contact .contactDesc span {
+         color: crimson;
+      }
+      /* CONTACT selesai */
+}
+
+
+
+@media screen and (max-width: 600px) {
+   /* Responsive HOME */
+   main .home .greating h1 {
+      line-height: 3rem;
+      margin: 100px 0 auto;
+   }
+
+   main .home {
+      background-position: 100% 200px;
+   }
+   /* HOME selesai */
+
+
+
+   /* Responsive ABOUT */
+   
+   main .about .addresses {
+      margin-top: -5px;
+      font-size: 2.2vw;
+   }
+   
+   main .addresses + .desc-myself {
+      font-size: 16px;
+   }
+
+   main .about .media-sos {
+      width: 70%;
+      justify-content: space-around;
+   }
+   
+   main .media-sos li a {
+      display: block;
+      width: 50px;
+      height: 50px;
+   }
+   
+   main .media-sos li a img {
+      width: 100%;
+   }
+   /* ABOUT selesai */
+
+}
